@@ -53,7 +53,7 @@ def collect_training_data(total_actions):
         # STUDENTS: Save .csv here. Remember rows are individual samples, the first 5
         # columns are sensor values, the 6th is the action, and the 7th is collision.
         # Do not title the columns. Your .csv should look like the provided sample.
-    np.savetxt("training_data.csv", network_params, fmt='%s')
+    np.savetxt("training_data.csv", network_params, delimiter=",")
 
 
 if __name__ == '__main__':
