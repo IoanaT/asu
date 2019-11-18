@@ -17,7 +17,7 @@ def collect_training_data(total_actions):
     num_params = 7
     # STUDENTS: network_params will be used to store your training data
     # a single sample will be comprised of: sensor_readings, action, collision
-    network_params = np.ndarray
+    network_params = []
 
     for action_i in range(total_actions):
         progress = 100 * float(action_i) / total_actions
@@ -39,11 +39,16 @@ def collect_training_data(total_actions):
                 if action_timestep < action_repeat * .3:  # in case prior action caused collision
                     network_params[-1][-1] = collision  # share collision result with prior action
                 break
-            print(sensor_readings);
-            print(action);
-            print(collision);
+        print(sensor_readings)
+        print(action)
+        print(collision)
+        sensor_readings = np.append(sensor_readings, action)
+        sensor_readings = np.append(sensor_readings, collision)
+        print(sensor_readings)
+        print(action)
+        print(collision)
         # STUDENTS: Update network_params.
-        network_params[action_i][action_timestep] = np.ndarray([sensor_readings, action, collision])
+        network_params.append(sensor_readings)
 
         # STUDENTS: Save .csv here. Remember rows are individual samples, the first 5
         # columns are sensor values, the 6th is the action, and the 7th is collision.
