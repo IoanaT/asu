@@ -15,7 +15,7 @@ def train_model(no_epochs):
 
     losses = []
     loss_function = nn.MSELoss()
-    learning_rate = 0.1
+    learning_rate = 0.01
     optimizer = torch.optim.Adam(model.parameters(), learning_rate)
     min_loss = model.evaluate(model, data_loaders.test_loader, loss_function)
     losses.append(min_loss)
