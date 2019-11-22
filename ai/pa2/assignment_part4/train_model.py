@@ -23,6 +23,8 @@ def train_model(no_epochs):
 
     for epoch_i in range(no_epochs):
         model.train()
+        print(epoch_i)
+        data_loaders = Data_Loaders(batch_size)
         for idx, sample in enumerate(data_loaders.train_loader):
             optimizer.zero_grad()
             output = model(sample['input'])
