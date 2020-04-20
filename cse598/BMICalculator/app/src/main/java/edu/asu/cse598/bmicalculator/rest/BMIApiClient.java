@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BMIApiClient {
 
-    private static final String BASE_URL = "http://webstrar99.fulton.asu.edu/page3/Service1.svc/calculateBMI";
+    private static final String BASE_URL = "http://webstrar99.fulton.asu.edu/page3/Service1.svc/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
