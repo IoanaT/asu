@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText weightEditText;
     private TextView label;
     private TextView message;
+    private String uri = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +48,24 @@ public class MainActivity extends AppCompatActivity {
      */
     public void callBmi(View view) {
         label.clearComposingText();
-        BMIApi bmiService = BMIApiClient.getClient().create(BMIApi.class);
         String height = heightEditText.getText().toString();
         String weight = weightEditText.getText().toString();
+        callApi(height, weight);
+    }
+
+    /**
+     * Called when user taps educate me
+     */
+    public void educateMe(View view) {
+        if(uri.isEmpty()){
+            callApi("60", "156");
+        }
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(browserIntent);
+    }
+
+    private void callApi(String height, String weight) {
+        BMIApi bmiService = BMIApiClient.getClient().create(BMIApi.class);
         Call<BMIResult> call = bmiService.calculateBmi(height, weight);
         call.enqueue(new Callback<BMIResult>() {
             @Override
@@ -63,9 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, ">>> " + more.toString());
                 Log.i(TAG, ">>> " + risk);
 
-                label.append(bmi);
+                label.setText(bmi);
                 colourMessage(risk);
-                message.append(risk);
+                message.setText(risk);
+                uri = more.get(0);
             }
 
             @Override
@@ -73,20 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
-
-
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-        // startActivity(intent);
-    }
-
-    /**
-     * Called when user taps educate me
-     */
-    public void educateMe(View view) {
-
     }
 
     public void colourMessage(String risk) {
