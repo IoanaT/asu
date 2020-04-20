@@ -1,6 +1,5 @@
 package edu.asu.cse598.bmicalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, ">>> " + more.toString());
                 Log.i(TAG, ">>> " + risk);
 
-                ((EditText) findViewById(R.id.editText)).append(bmi);
+                ((EditText) findViewById(R.id.editText)).append(more.get(0));
+
+                // TODO open the first link from "more" array in browser
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(more.get(0)));
+//                startActivity(browserIntent);
             }
 
             @Override
@@ -54,12 +57,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
-
-
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        // startActivity(intent);
     }
 }
