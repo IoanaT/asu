@@ -1,7 +1,5 @@
 package edu.asu.cse598.bmicalculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -10,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText weightEditText;
     private TextView label;
     private TextView message;
-    private String uri = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +46,17 @@ public class MainActivity extends AppCompatActivity {
         label.clearComposingText();
         String height = heightEditText.getText().toString();
         String weight = weightEditText.getText().toString();
-        callApi(height, weight);
+        callApi(height, weight, false);
     }
 
     /**
      * Called when user taps educate me
      */
     public void educateMe(View view) {
-        if(uri.isEmpty()){
-            callApi("60", "156");
-        }
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        startActivity(browserIntent);
+        callApi("60", "156", true);
     }
 
-    private void callApi(String height, String weight) {
+    private void callApi(String height, String weight, boolean openLink) {
         BMIApi bmiService = BMIApiClient.getClient().create(BMIApi.class);
         Call<BMIResult> call = bmiService.calculateBmi(height, weight);
         call.enqueue(new Callback<BMIResult>() {
@@ -74,16 +66,19 @@ public class MainActivity extends AppCompatActivity {
                 String bmi = response.body().getBmi();
                 List<String> more = response.body().getMore();
                 String risk = response.body().getRisk();
-                Toast.makeText(MainActivity.this, risk, Toast.LENGTH_SHORT).show();
 
                 Log.i(TAG, ">>> " + bmi);
                 Log.i(TAG, ">>> " + more.toString());
                 Log.i(TAG, ">>> " + risk);
 
-                label.setText(bmi);
-                colourMessage(risk);
-                message.setText(risk);
-                uri = more.get(0);
+                if (openLink) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(more.get(0)));
+                    startActivity(browserIntent);
+                } else {
+                    label.setText(bmi);
+                    colourMessage(risk);
+                    message.setText(risk);
+                }
             }
 
             @Override
@@ -94,13 +89,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void colourMessage(String risk) {
-        if(risk.contains("underweight")){
+        if (risk.contains("underweight")) {
             message.setTextColor(Color.BLUE);
-        } else if(risk.contains("normal")){
+        } else if (risk.contains("normal")) {
             message.setTextColor(Color.GREEN);
-        } else if(risk.contains("pre-obese")){
+        } else if (risk.contains("pre-obese")) {
             message.setTextColor(Color.MAGENTA);
-        } else if(risk.contains("obese")){
+        } else if (risk.contains("obese")) {
             message.setTextColor(Color.RED);
         }
     }
