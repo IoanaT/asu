@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
+    <string name="call_bmi">Call BMI API</string>
+    <string name="educate">Educate Me</string>
 </resources>
