@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="BMI API"
         android:textSize="@dimen/text_size"
+        android:textStyle="bold"
         android:ems="5"
         android:id="@+id/title"
         android:layout_gravity="center_horizontal"
@@ -118,7 +119,7 @@
             android:layout_weight="2"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="sendMessage"
+            android:onClick="callBmi"
             android:text="@string/call_bmi"
             android:textColor="@color/skyBlue" />
         <Button
@@ -128,10 +129,9 @@
             android:layout_weight="2"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="sendMessage"
+            android:onClick="educateMe"
             android:text="@string/educate"
             android:textColor="@color/skyBlue" />
-
     </LinearLayout>
 
 </LinearLayout>
