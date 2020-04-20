@@ -10,11 +10,12 @@ import numpy.linalg as la
 
 def get_network_param(sim_env, action, scaler):
     sensor_readings = sim_env.raycasting()
-    network_param = np.append(sensor_readings, [action, 0]) #unutilized 0 added to match shape of scaler
-    network_param = scaler.transform(network_param.reshape(1,-1))
+    network_param = np.append(sensor_readings, [action, 0])  # unutilized 0 added to match shape of scaler
+    network_param = scaler.transform(network_param.reshape(1, -1))
     network_param = network_param.flatten()[:-1]
     network_param = torch.as_tensor(network_param, dtype=torch.float32)
     return network_param
+
 
 def goal_seeking(goals_to_reach):
     sim_env = sim.SimulationEnvironment()
@@ -22,13 +23,13 @@ def goal_seeking(goals_to_reach):
     # steering_behavior = Wander(action_repeat)
     steering_behavior = Seek(sim_env.goal_body.position)
 
-    #load model
+    # load model
     model = Action_Conditioned_FF()
     model.load_state_dict(torch.load('saved/saved_model.pkl'))
     model.eval()
 
-    #load normalization parameters
-    scaler = pickle.load( open("saved/scaler.pkl", "rb"))
+    # load normalization parameters
+    scaler = pickle.load(open("saved/scaler.pkl", "rb"))
 
     accurate_predictions, false_positives, missed_collisions = 0, 0, 0
     robot_turned_around = False
@@ -43,7 +44,7 @@ def goal_seeking(goals_to_reach):
             goals_reached += 1
             continue
 
-        action_space = np.arange(-5,6)
+        action_space = np.arange(-5, 6)
         actions_available = []
         for action in action_space:
             network_param = get_network_param(sim_env, action, scaler)

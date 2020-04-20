@@ -57,5 +57,5 @@ def collect_training_data(total_actions):
 
 
 if __name__ == '__main__':
-    total_actions = 10000
+    total_actions = 50000
     collect_training_data(total_actions)
