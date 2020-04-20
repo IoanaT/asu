@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="activity_vertical_margin">20</dimen>
-    <dimen name="activity_horizontal_margin">20</dimen>
-    <dimen name="text_size">26</dimen>
-    <dimen name="title_padding">40</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="text_size">26dp</dimen>
+    <dimen name="title_padding">40dp</dimen>
 </resources>
