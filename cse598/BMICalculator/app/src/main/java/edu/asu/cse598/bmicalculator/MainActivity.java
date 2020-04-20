@@ -1,13 +1,17 @@
 package edu.asu.cse598.bmicalculator;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Color;
+import android.icu.text.DecimalFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "edu.asu.cse598.bmicalculator.MESSAGE";
     private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String DEFAULT_HEIGHT = "60";
+    private static final String DEFAULT_WEIGHT = "156";
     private EditText heightEditText;
     private EditText weightEditText;
     private TextView label;
@@ -43,17 +49,20 @@ public class MainActivity extends AppCompatActivity {
      * Called when the user taps the Send button
      */
     public void callBmi(View view) {
-        label.clearComposingText();
         String height = heightEditText.getText().toString();
         String weight = weightEditText.getText().toString();
-        callApi(height, weight, false);
+        if  (height.isEmpty() || weight.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Please enter height and weight!",Toast.LENGTH_SHORT).show();
+        } else {
+            callApi(height, weight, false);
+        }
     }
 
     /**
      * Called when user taps educate me
      */
     public void educateMe(View view) {
-        callApi("60", "156", true);
+        callApi(DEFAULT_HEIGHT, DEFAULT_WEIGHT, true);
     }
 
     private void callApi(String height, String weight, final boolean openLink) {
@@ -75,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(more.get(0)));
                     startActivity(browserIntent);
                 } else {
-                    label.setText(bmi);
+                    label.setText(new DecimalFormat("#.##").format(Double.parseDouble(bmi)));
                     colourMessage(risk);
                     message.setText(risk);
                 }
@@ -89,13 +98,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void colourMessage(String risk) {
-        if (risk.contains("underweight")) {
+        if(risk.contains("underweight")){
             message.setTextColor(Color.BLUE);
-        } else if (risk.contains("normal")) {
+        } else if(risk.contains("normal")){
             message.setTextColor(Color.GREEN);
-        } else if (risk.contains("pre-obese")) {
+        } else if(risk.contains("pre-obese")){
             message.setTextColor(Color.MAGENTA);
-        } else if (risk.contains("obese")) {
+        } else if(risk.contains("obese")){
             message.setTextColor(Color.RED);
         }
     }

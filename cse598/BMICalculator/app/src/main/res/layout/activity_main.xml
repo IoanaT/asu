@@ -42,7 +42,7 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/height_input"
-            android:hint="" />
+            android:hint="                inches" />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -67,7 +67,7 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/weight_input"
-            android:hint="" />
+            android:hint="                lbs" />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,7 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         BMI:"
+            android:text="   BMI:"
             android:textSize="@dimen/text_size"
             android:ems="5"
             android:id="@+id/bmi"
@@ -98,13 +98,14 @@
 
 
     <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="@dimen/text_size"
             android:ems="5"
             android:id="@+id/message"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linear_container5"
