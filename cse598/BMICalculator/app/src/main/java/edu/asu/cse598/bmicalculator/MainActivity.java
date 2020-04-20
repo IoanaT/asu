@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         callApi("60", "156", true);
     }
 
-    private void callApi(String height, String weight, boolean openLink) {
+    private void callApi(String height, String weight, final boolean openLink) {
         BMIApi bmiService = BMIApiClient.getClient().create(BMIApi.class);
         Call<BMIResult> call = bmiService.calculateBmi(height, weight);
         call.enqueue(new Callback<BMIResult>() {
