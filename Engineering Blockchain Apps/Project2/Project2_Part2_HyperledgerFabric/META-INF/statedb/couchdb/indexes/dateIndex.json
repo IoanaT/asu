@@ -1,0 +1,8 @@
+{
+    "index": {
+        "fields": [ "date"]
+    },
+    "ddoc": "dateIndexDoc",
+    "name": "dateIndex",
+    "type": "json"
+}
