@@ -1,11 +1,5 @@
 # Hands-on Lab Description
 
-2021 Copyright Notice: The lab materials are only used for education purpose. Copy and redistribution is prohibited or need to
-get authors’ consent.
-Please contact Professor Dijiang Huang: Dijiang.Huang@asu.edu
-
-
-## CS-CNS-00101 –
 
 ## OpenFlow Based Stateless firewall
 
