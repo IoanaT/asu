@@ -1,0 +1,7 @@
+# Model
+Type of Phone: iPhone X, iPhone 8, Samsung S9, Huawei Mate, Google Pixel 3
+Parallel Tasks Running: Yes, No
+Connectivity: Wireless, 3G, 4G, Edge
+Memory: 1 GB, 2 GB, 4 GB, 6 GB
+Battery Level: <20%, 20-39%, 40-59%, 60-79%, 80-100%
+ 

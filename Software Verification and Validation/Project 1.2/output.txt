@@ -1,0 +1,26 @@
+Type of Phone	Parallel Tasks Running	Connectivity	Memory	Battery Level
+Google Pixel 3	No	Wireless	2 GB	60-79%
+Samsung S9	Yes	3G	4 GB	80-100%
+iPhone X	No	Edge	1 GB	80-100%
+Huawei Mate	Yes	4G	6 GB	40-59%
+iPhone X	No	3G	6 GB	60-79%
+iPhone X	Yes	4G	2 GB	<20%
+Samsung S9	Yes	4G	1 GB	60-79%
+iPhone 8	No	Wireless	4 GB	<20%
+Samsung S9	No	Edge	2 GB	40-59%
+Google Pixel 3	Yes	4G	6 GB	80-100%
+iPhone 8	Yes	Edge	1 GB	60-79%
+Huawei Mate	No	3G	1 GB	<20%
+Samsung S9	Yes	Wireless	6 GB	<20%
+Google Pixel 3	No	Edge	4 GB	<20%
+iPhone 8	No	4G	6 GB	20-39%
+Huawei Mate	Yes	Edge	4 GB	20-39%
+Samsung S9	No	3G	2 GB	20-39%
+Google Pixel 3	Yes	Wireless	1 GB	20-39%
+iPhone X	No	Wireless	4 GB	40-59%
+Huawei Mate	No	Wireless	2 GB	80-100%
+Huawei Mate	No	4G	4 GB	60-79%
+iPhone 8	No	3G	2 GB	80-100%
+iPhone X	Yes	Edge	6 GB	20-39%
+Google Pixel 3	Yes	3G	1 GB	40-59%
+iPhone 8	No	Edge	2 GB	40-59%

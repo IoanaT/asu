@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#Example of test case
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Summer	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Summer	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Spring	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Spring	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Winter	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Winter	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Fall	Electronics	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Gold	Fall	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Silver	Fall	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	Returning	Bronze	Fall	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Gold	Fall	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Silver	Fall	Unknown	8	
+java -jar CSE565P1.jar Taylor	20	New	Bronze	Fall	Unknown	8	
+java -jar CSE565P1.jar Maria	18	Returning	Gold	Summer	Electronics	1	
+java -jar CSE565P1.jar Maria	18	Returning	Gold	Summer	Electronics	10	
+java -jar CSE565P1.jar Maria	18	Returning	Gold	Summer	Electronics	0	
+java -jar CSE565P1.jar Maria	18	Returning	Gold	Summer	Electronics	11	
+java -jar CSE565P1.jar Maximilian	18	Returning	Gold	Summer	Electronics	7	
+java -jar CSE565P1.jar Max	19	Returning	Gold	Summer	Electronics	7	
+java -jar CSE565P1.jar Maximiliana	18	Returning	Gold	Summer	Electronics	7	
+java -jar CSE565P1.jar Maria123	18	Returning	Gold	Summer	Electronics	8	
+java -jar CSE565P1.jar Maria-	18	Returning	Gold	Summer	Electronics	8	
+java -jar CSE565P1.jar Maria_	18	Returning	Gold	Summer	Electronics	8	
+java -jar CSE565P1.jar Maria	13	Returning	Gold	Summer	Electronics	8	
+
+#ADD TEST CASES BELOW

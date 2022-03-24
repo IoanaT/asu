@@ -1,0 +1,59 @@
+The discount given is 15%
+No discount given
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+The discount given is 10%
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+No discount given
+The discount given is 5%
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+No discount given
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+The discount given is 20%
+No discount given
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+No discount given
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+No discount given
+No discount given
+No discount given
+The discount given is 10%
+The discount given is 10%
+The discount given is 10%
+The discount given is 15%
+The discount given is 15%
+The discount given is 15%
+Rating must be between 1 and 10
+The discount given is 15%
+Username length invalid
+The discount given is 15%
+Username contains digits
+Username contains -
+The discount given is 15%
+You must be 18 or older to register in the database
